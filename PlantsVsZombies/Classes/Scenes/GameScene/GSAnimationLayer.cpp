@@ -152,7 +152,7 @@ void GSAnimationLayer::createZombies()
 	zombies->createZombie();
 	zombies->setZombieAttributeForGameType();
 	ZombiesGroup.push_back(zombies);
-	Zombies::zombiesNumbersChange("++");
+	Zombies::zombiesNumbersInc();
 }
 
 void GSAnimationLayer::createZombiesOnSurvival()
@@ -164,7 +164,7 @@ void GSAnimationLayer::createZombiesOnSurvival()
 	zombies->createZombie();
 	zombies->setZombieAttributeForGameType();
 	ZombiesGroup.push_back(zombies);
-	Zombies::zombiesNumbersChange("++");
+	Zombies::zombiesNumbersInc();
 }
 
 Layer* GSAnimationLayer::getSunLayer() const

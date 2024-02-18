@@ -898,7 +898,7 @@ void UserData::openLevelZombiesData(char* key)
 		if (!visible) zombies->setZombieIsShowLoseLimbsAnimation(false);
 		zombies->setZombieAttributeForGameType();
 		ZombiesGroup.push_back(zombies);
-		Zombies::zombiesNumbersChange("++");
+		Zombies::zombiesNumbersInc();
 	}
 }
 

@@ -208,7 +208,8 @@ void Zombies::zombiesDeleteUpdate(list<Zombies*>::iterator& zombie)
 			++Global::getInstance()->userInformation->getKillZombiesNumbers();
 			informationLayerInformation->updateZombiesDieNumbers(); /* 更新显示 */
 
-			zombiesNumbersChange("--");  /* 僵尸总数更新 */
+			// 僵尸数量减少
+			zombiesNumbersDec();
 			rewardCoin((*zombie)->getZombieAnimation());
 
 			if (++_zombiesNewDieNumbers >= 20 || getZombiesNumbers() <= 0)
@@ -522,16 +523,16 @@ float Zombies::getZombieLocalZOrder(const int& positiionY) const
 	return 0;
 }
 
-void Zombies::zombiesNumbersChange(const string& name)
+/// @brief 僵尸数量增长
+void Zombies::zombiesNumbersInc(void)
 {
-	if (name == "++")
-	{
-		++_zombiesNumbers;
-	}
-	else
-	{
-		--_zombiesNumbers;
-	}
+	++_zombiesNumbers;
+}
+
+/// @brief 僵尸数量减少
+void Zombies::zombiesNumbersDec(void)
+{
+	--_zombiesNumbers;
 }
 
 void Zombies::judgeZombieWin(list<Zombies*>::iterator zombie)

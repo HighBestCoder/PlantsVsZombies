@@ -73,12 +73,11 @@ public:
 	 */
 	static void setZombiesNumbers(const unsigned int numbers);
 
-	/**
-	 *僵尸数量自增/自减一
-	 *@ ++ 自增1
-	 *@ -- 自减1
-	 */
-	static void zombiesNumbersChange(const string&);
+	/// @brief 设置僵尸数量增加
+	static void zombiesNumbersInc();
+
+	/// @brief 设置僵尸数量减少
+	static void zombiesNumbersDec();
 
 	/**
 	 *判断僵尸赢
